@@ -1,6 +1,6 @@
 #include "functions.h"
 
-void game(char* a[])
+void game()
 {
     int i,countr=0;
     for(i=1;i<=10;i++)
