@@ -35,7 +35,7 @@ void main()
     {
 		printf("\n\n\n\n\n\n\n\n\n\n\t\t\tRegister your name:");
 		scanf("%s",playername);
-		printf("\n ------------------  Welcome %20s to C Program Quiz Game --------------------------",playername);
+		printf("\n ------------------  Welcome %19s to C Program Quiz Game --------------------------",playername);
 		printf("\n\n Here are some tips you might wanna know before playing:");
 		printf("\n -------------------------------------------------------------------------");
 		printf("\n >> There are 2 rounds in this Quiz Game,WARMUP ROUND & CHALLANGE ROUND");
@@ -74,7 +74,7 @@ void test(){
 void score(int countr){
 	char playername[20];
 	printf("\n\n\n\n\n\n\n\n\n\n\t\t\tEnter your name:");
-	scanf("%20s",playername);
+	scanf("%19s",playername);
     float score=countr*1000;
 	if(score>0.00 && score<10000.00)
 	{
