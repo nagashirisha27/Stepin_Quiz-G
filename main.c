@@ -74,7 +74,7 @@ void test(){
 void score(int countr){
 	char playername[20];
 	printf("\n\n\n\n\n\n\n\n\n\n\t\t\tEnter your name:");
-	scanf("%s",playername);
+	scanf("%10s",playername);
     float score=countr*1000;
 	if(score>0.00 && score<10000.00)
 	{
