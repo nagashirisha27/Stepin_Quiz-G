@@ -1,6 +1,7 @@
-PROJ_NAME = QUIZ_GAME
-SRC = main.c functions.c
+PROJ_NAME = game
+SRC = main.c game.c
 
+#To check if the OS is windows or linux and set the executable file extension and delete command accordingly
 ifdef OS
    RM = del /q
    FixPath = $(subst /,\,$1)
@@ -14,7 +15,7 @@ else
 endif
 
 build:
-	gcc $(SRC) -o $(call FixPath,$(PROJ_NAME).$(EXEC))
+	gcc $(SRC) -o $(call FixPath,$(PROJ_NAME).$(EXEC)) -lm
 
 run: build
 	./$(call FixPath,$(PROJ_NAME).$(EXEC))
