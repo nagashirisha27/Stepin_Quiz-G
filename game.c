@@ -1,215 +1,185 @@
-#include "game.h"
-char box[10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char player1[50], player2[50] = {'c', 'o', 'm'};
-void intro()
-{
-    printf("0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0\n");
-    printf("\n\t\t\t\t\t\t || Welcome To The TIC TAC TOE Game ||\t\t\t\t\t\n");
-}
-void gameChoice()
-{
-    int twoChoices = 0;
-    do
-    {
-        if (twoChoices != 0)
-        {
-            printf("\nInvalid choice... Enter Again!\n");
-        }
-        printf("\n\n--> 1 Player Game (PRESS 1)\n");
-        printf("\n--> 2 Player Game (PRESS 2)\n");
-        printf("\nYour choice:\n");
-        scanf("%d", &twoChoices);
-    } while (twoChoices != 1 && twoChoices != 2);
-    intro();
-    if (twoChoices == 1)
-    {
-        printf("\nLet's start the game between You and Computer.\n");
-        gameBuildForOnePlayer();
-    }
-    else
-    {
-        printf("\nLet's start the game between You and Your Friend.\n");
-        gameBuildForTwoPlayers();
-    }
-}
-void gameBuildForOnePlayer()
-{
-    int winValue = 0, playersChoice, playerValue = 1;
-    printf("\n\nPlayer 1 please enter your name:\n");
-    fflush(stdin);
-    gets(player1);
+#include "functions.h"
 
-    fflush(stdin);
-    do
-    {   char mark;
-        gameBoard();
-        playerValue = (playerValue % 2) ? 1 : 2;
-
-        printf("\n------------------------------\n");
-        mark = (playerValue == 1) ? 'O' : 'X';
-        if (playerValue == 1)
-        {
-            printf("%s, please enter your choice:\n", player1);
-            scanf("%d", &playersChoice);
-        }
-        else
-        {
-            playersChoice = generateRandomNumber(9) + 1;
-            printf("Computer Choose :\n%d\n", playersChoice);
-        }
-        if (playersChoice == 1 && box[1] == '1')
-            box[1] = mark;
-        else if (playersChoice == 2 && box[2] == '2')
-            box[2] = mark;
-        else if (playersChoice == 3 && box[3] == '3')
-            box[3] = mark;
-        else if (playersChoice == 4 && box[4] == '4')
-            box[4] = mark;
-        else if (playersChoice == 5 && box[5] == '5')
-            box[5] = mark;
-        else if (playersChoice == 6 && box[6] == '6')
-            box[6] = mark;
-        else if (playersChoice == 7 && box[7] == '7')
-            box[7] = mark;
-        else if (playersChoice == 8 && box[8] == '8')
-            box[8] = mark;
-        else if (playersChoice == 9 && box[9] == '9')
-            box[9] = mark;
-        else
-        {
-            printf("Invalid Option!\n");
-            playerValue--;
-            getchar();
-        }
-
-        getchar();
-        winValue = checkWinner();
-        playerValue++;
-
-    } while (winValue == -1);
-
-    gameBoard();
-
-    if (winValue == 1)
+void game(char* a[])
+{
+    int i,countr=0;
+    for(i=1;i<=10;i++)
     {
-        if (playerValue - 1 == 1)
-        {
-            printf("\nCONGRATS %s! You won the game.\n", player1);
-        }
-        else
-        {
-            printf("\nOops! Computer won the game.\n");
+        switch(i)
+		{
+		case 1:
+		        printf("\n\nThe format identifier percent i is also used for _____ data type.");
+		        printf("\n\nA.char\t\tB.int\n\nC.float\t\tD.double");
+		        if (toupper(getch())=='B')
+			    {
+                    printf("\n\nCorrect!!!");
+                    countr++;
+                    getch();
+			        break;
+                }
+		        else
+		        {
+                    printf("\n\nWrong!!! The correct answer is B.int");
+                    getch();
+		            score(countr);
+		            break;
+                }
+		case 2:
+		        printf("\n\n\nWhich of the following is a User-defined data type?");
+		        printf("\n\nA.typedef int Boolean;\t\tB.typedef enum {Mon, Tue, Wed, Thu, Fri} Workdays;\n\nC.struct {char name[10], int age};\t\tD.all of the mentioned");
+		        if (toupper(getch())=='D')
+			    {
+                    printf("\n\nCorrect!!!");
+                    countr++;
+                    getch();
+			        break;
+                }
+		        else
+		        {
+                    printf("\n\nWrong!!! The correct answer is D.all of the mentioned");
+                    getch();
+		            score(countr);
+		            break;
+		        }
+
+        case 3:
+		        printf("\n\n\nWhat is the following is invalid header file in C?");
+		        printf("\n\nA.math.h\t\tB.mathio.h\n\nC.string.h\t\tD.ctype.h");
+		        if (toupper(getch())=='B')
+			    {
+                    printf("\n\nCorrect!!!");
+                    countr++;
+                    getch();
+			        break;
+                }
+		        else
+		        {
+                    printf("\n\nWrong!!! The correct answer is B.mathio.h");
+                    getch();
+		            score(countr);
+		            break;
+                }
+
+        case 4:
+		        printf("\n\n\nWhat is the number of characters used to distinguish Identifier or Names of Functions and Global variables.?");
+		        printf("\n\nA.31\t\tB.32\n\nC.33\t\tD.28");
+		        if (toupper(getch())=='A')
+			    {
+                    printf("\n\nCorrect!!!");
+                    countr++;
+                    getch();
+			        break;
+                }
+		        else
+		        {
+                    printf("\n\nWrong!!! The correct answer is A.31");
+                    getch();
+		            score(countr);
+		            break;
+		        }
+        case 5:
+		        printf("\n\n\nEach statement in a C program should end with.?");
+		        printf("\n\nA.Semicolon ;\t\tB.Colon :\n\nC.Period . (dot symbol)\t\tD.None of the above.");
+		        if (toupper(getch())=='A')
+			    {
+                    printf("\n\nCorrect!!!");
+                    countr++;
+                    getch();
+                    break;
+                }
+		        else
+		        {
+		            printf("\n\nWrong!!! The correct answer is A.Semicolon ;");
+		            getch();
+		            score(countr);
+		            break;
+		        }
+		case 6:
+		        printf("\n\n\nA function which calls itself is called a ___ function.");
+		        printf("\n\nA. Self Function\t\tB.Auto Function\n\nC.Recursive Function\t\tD.Static Function");
+		        if (toupper(getch())=='C' )
+			    {
+                    printf("\n\nCorrect!!!");
+                    countr++;
+                    getch();
+			        break;
+                }
+		        else
+		        {
+                    printf("\n\nWrong!!! The correct answer is C.Recursive Function");
+		            getch();
+                    score(countr);
+		            break;
+                }
+        case 7:
+		        printf("\n\n\nHow many values can a C Function return at a time.?");
+		        printf("\n\nA. Only One Value\t\tB.Maximum of two values\n\nC.Maximum of three values\t\tD.Maximum of 8 values");
+		        if (toupper(getch())=='A')
+			    {
+                    printf("\n\nCorrect!!!");
+                    countr++;
+                    getch();
+			        break;
+                }
+		        else
+		        {
+                    printf("\n\nWrong!!! The correct answer is A. Only One Value");
+                    getch();
+		            score(countr);
+		            break;
+                }
+        case 8:
+		        printf("\n\n\nWhat is the value of an array element which is not initialized.?");
+		        printf("\n\nA.By default Zero 0\t\tB.1\n\nC.Depends on Storage Class\t\tD.None of the above.");
+		        if (toupper(getch())=='C')
+			    {
+                    printf("\n\nCorrect!!!");
+                    countr++;
+                    getch(); 
+                    break;
+                }
+		        else
+		        {
+                    printf("\n\nWrong!!! The correct answer is C.Depends on Storage Class");
+                    getch();
+		            score(countr);
+		            break;
+                }
+        case 9:
+		        printf("\n\n\nWhat are the types of data allowed inside a structure.?");
+		        printf("\n\nA.int, float, double, long double\t\tB.char, enum, union\n\nC.pointers and Same structure type members\t\tD.All the above");
+		        if (toupper(getch())=='D')
+			    {
+                    printf("\n\nCorrect!!!");
+                    countr++;
+                    getch();
+			        break;
+                }
+		        else
+		        {
+                    printf("\n\nWrong!!! The correct answer is D.All the above");
+                    getch();
+		            score(countr);
+		            break;
+                }
+        case 10:
+		        printf("\n\n\nWhat is the input file in a C program building process.?");
+		        printf("\n\nA.filename.k\t\tB.filename.cpp\n\nC.filename.c\t\tD.filename.p");
+		        if (toupper(getch())=='C')
+			    {
+                    printf("\n\nCorrect!!!");
+                    countr++;
+                    getch(); 
+                    break;
+                }
+		        else
+		        {
+                    printf("\n\nWrong!!! The correct answer is C.filename.c");
+                    getch();
+                    score(countr);
+                    break;
+                }
         }
     }
-    else
-    {
-        printf("Game is draw.\n");
-    }
-    thanks();
-}
-int generateRandomNumber(int n)
-{
-    srand(time(NULL));
-    return rand() % n;
-}
-void gameBoard()
-{
-    intro();
-    //greet();
-    printf("\n\t\n%s [O] & ", player1);
-    printf("%s [X]", player2);
-    printf("\n\n\n");
-    printf("  %c |  %c |  %c \n", box[1], box[2], box[3]);
-    printf(" ___|____|____\n");
-    printf("    |    |     \n");
-    printf("  %c |  %c |  %c \n", box[4], box[5], box[6]);
-    printf(" ___|____|____\n");
-    printf("    |    |     \n");
-    printf("  %c |  %c |  %c \n", box[7], box[8], box[9]);
-    printf("\n\n\n");
-}
-int checkWinner()
-{
-    if (box[1] != '1' && box[2] != '2' && box[3] != '3' && box[4] != '4' && box[5] != '5' && box[6] != '6' && box[7] != '7' && box[8] != '8' && box[9] != '9')
-        return 0;
-    else if (box[1] == box[2] && box[2] == box[3])
-        return 1;
-    else if (box[1] == box[4] && box[4] == box[7])
-        return 1;
-    else if (box[3] == box[6] && box[6] == box[9])
-        return 1;
-    else if (box[4] == box[5] && box[5] == box[6])
-        return 1;
-    else if (box[7] == box[8] && box[8] == box[9])
-        return 1;
-    else if (box[1] == box[5] && box[5] == box[9])
-        return 1;
-    else if (box[3] == box[5] && box[5] == box[7])
-        return 1;
-    else
-        return -1;
-}
-void gameBuildForTwoPlayers()
-{
-    int winValue = 0, playersChoice, playerValue = 1;
-    printf("\n\nPlayer 1 please enter your name:\n");
-    fflush(stdin);
-    gets(player1);
-    printf("\n\nPlayer 2 please enter your name:\n");
-    gets(player2);
-    fflush(stdin);
-    do
-    {
-        char mark;
-        gameBoard();
-        playerValue = (playerValue % 2) ? 1 : 2;
-        printf("\n------------------------------\n");
-        (playerValue == 1) ? printf("%s, please enter your choice:\n", player1) : printf("%s, please enter your choice:\n", player2);
-        scanf("%d", &playersChoice);
-        mark = (playerValue == 1) ? 'O' : 'X';
-        if (playersChoice == 1 && box[1] == '1')
-            box[1] = mark;
-        else if (playersChoice == 2 && box[2] == '2')
-            box[2] = mark;
-        else if (playersChoice == 3 && box[3] == '3')
-            box[3] = mark;
-        else if (playersChoice == 4 && box[4] == '4')
-            box[4] = mark;
-        else if (playersChoice == 5 && box[5] == '5')
-            box[5] = mark;
-        else if (playersChoice == 6 && box[6] == '6')
-            box[6] = mark;
-        else if (playersChoice == 7 && box[7] == '7')
-            box[7] = mark;
-        else if (playersChoice == 8 && box[8] == '8')
-            box[8] = mark;
-        else if (playersChoice == 9 && box[9] == '9')
-            box[9] = mark;
-        else
-        {
-            printf("Invalid Option!\n");
-            playerValue--;
-            getchar();
-        }
-        getchar();
-        winValue = checkWinner();
-        playerValue++;
-    } while (winValue == -1);
-    gameBoard();
-    if (winValue == 1)
-    {
-        printf(" CONGRATS ");
-        (playerValue - 1 == 1) ? printf("%s!", player1) : printf("%s!", player2);
-        printf(" You won the game.\n");
-    }
-    else
-    {
-        printf("Game is draw.\n");
-    }
-    thanks();
-}
-void thanks()
-{
-    printf("\n\t\t\t\t\t\t || THANKS FOR PLAYING OUR GAME %s and %s. ||\t\t\t\t\t", player1, player2);
-    printf("\n0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0\n");
+    score(countr);
 }
