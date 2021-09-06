@@ -1,1 +1,0 @@
-# Stepin_Quiz-G
