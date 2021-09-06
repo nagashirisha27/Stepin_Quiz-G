@@ -1,6 +1,4 @@
-
 #include "functions.h"
-
 void show_record()
     {
 	char name[20];
@@ -13,7 +11,6 @@ void show_record()
 	printf("\n\n\t\t*************************************************************");
 	fclose(f);
 	getch();}
-
 void reset_score()
     {
     float sc;
@@ -24,7 +21,6 @@ void reset_score()
 	sc=0;
 	fprintf(f,"%s,%.2f",nm,sc);
     fclose(f);}
-
 void help()
 	{
     printf("\n\n                              HELP");
@@ -44,7 +40,6 @@ void help()
 
 	printf("\n\n\t*********************BEST OF LUCK*********************************");
 	printf("\n\n\t*****C PROGRAM QUIZ GAME is developed by CODE WITH C TEAM********");}
-
 void edit_score(float score, char plnm[20])
 	{
 	float sc;

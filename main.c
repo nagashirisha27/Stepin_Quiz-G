@@ -29,8 +29,6 @@ int main()
      printf("\n\t\t > press Q to quit             ");
      printf("\n\t\t________________________________________\n\n");
      choice=toupper(getch());
-
-
     if(choice=='V')
 	{
 	    show_record();
@@ -52,12 +50,8 @@ int main()
 	    exit(1);
     else if(choice=='S')
     {
-    system("cls");
-
     printf("\n\n\n\n\n\n\n\n\n\n\t\t\tResister your name:");
     gets(playername);
-
-    system("cls");
     printf("\n ------------------  Welcome %s to C Program Quiz Game --------------------------",playername);
     printf("\n\n Here are some tips you might wanna know before playing:");
     printf("\n -------------------------------------------------------------------------");
@@ -75,7 +69,6 @@ int main()
     printf("\n\n\t!!!!!!!!!!!!! ALL THE BEST !!!!!!!!!!!!!");
     printf("\n\n\n Press Y  to start the game!\n");
     printf("\n Press any other key to return to the main menu!");
-    
     if (toupper(getch())=='Y')
 	{
 		goto home;
@@ -85,13 +78,10 @@ int main()
         goto mainhome;
         system("cls");
     }
-
     home:
-        system("cls");
         count=0;
         for(i=1;i<=5;i++)
         {
-            system("cls");
             r1=i;
             switch(r1)
 		    {
@@ -144,7 +134,6 @@ int main()
 		                getch();
 		                break;
                     }
-
             case 4:
 		            printf("\n\n\nWho invented C Language?");
 		            printf("\n\nA.Charles Babbage\t\tB.Grahambel\n\nC.Dennis Ritchie\t\tD.Steve Jobs");
@@ -160,7 +149,6 @@ int main()
 		                getch();
 		                break;
                     }
-
             case 5:
                     printf("\n\n\nC is a which level language.?");
                     printf("\n\nA.Low Level\t\tB.High Level\n\nC.Low + High\t\tD.None");
@@ -178,7 +166,6 @@ int main()
                     }
             }
         }
-
 	if(count>=3)
 	{goto test;}
 	else
@@ -196,7 +183,6 @@ game:
     countr=0;
     for(i=1;i<=10;i++)
     {
-        system("cls");
         r=i;
 
         switch(r)
@@ -271,7 +257,6 @@ game:
 		            goto score;
 		            break;
 		        }
-
         case 5:
 		        printf("\n\n\nEach statement in a C program should end with.?");
 		        printf("\n\nA.Semicolon ;\t\tB.Colon :\n\nC.Period . (dot symbol)\t\tD.None of the above.");
@@ -289,7 +274,6 @@ game:
 		            goto score;
 		            break;
 		        }
-
 		case 6:
 		        printf("\n\n\nA function which calls itself is called a ___ function.");
 		        printf("\n\nA. Self Function\t\tB.Auto Function\n\nC.Recursive Function\t\tD.Static Function");
@@ -307,7 +291,6 @@ game:
 		            getch();
 		            break;
                 }
-
         case 7:
 		        printf("\n\n\nHow many values can a C Function return at a time.?");
 		        printf("\n\nA. Only One Value\t\tB.Maximum of two values\n\nC.Maximum of three values\t\tD.Maximum of 8 values");
@@ -325,7 +308,6 @@ game:
 		            goto score;
 		            break;
                 }
-
         case 8:
 		        printf("\n\n\nWhat is the value of an array element which is not initialized.?");
 		        printf("\n\nA.By default Zero 0\t\tB.1\n\nC.Depends on Storage Class\t\tD.None of the above.");
@@ -343,7 +325,6 @@ game:
 		            goto score;
 		            break;
                 }
-
         case 9:
 		        printf("\n\n\nWhat are the types of data allowed inside a structure.?");
 		        printf("\n\nA.int, float, double, long double\t\tB.char, enum, union\n\nC.pointers and Same structure type members\t\tD.All the above");
@@ -361,7 +342,6 @@ game:
 		            goto score;
 		            break;
                 }
-
         case 10:
 		        printf("\n\n\nWhat is the input file in a C program building process.?");
 		        printf("\n\nA.filename.k\t\tB.filename.cpp\n\nC.filename.c\t\tD.filename.p");
@@ -381,8 +361,6 @@ game:
                 }
         }
     }
-
-
 	score:
 	score=(float)countr*1000;
 	if(score>0.00 && score<10000.00)
