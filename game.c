@@ -2,11 +2,10 @@
 
 void game(char* a[])
 {
-    int i,r,countr=0;
+    int i,countr=0;
     for(i=1;i<=10;i++)
     {
-        r=i;
-        switch(r)
+        switch(i)
 		{
 		case 1:
 		        printf("\n\nThe format identifier percent i is also used for _____ data type.");
