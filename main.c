@@ -11,7 +11,6 @@ int main()
      char choice;
      char playername[20];
      mainhome:
-     system("cls");
      printf("\t\t\tC PROGRAM QUIZ GAME\n");
      printf("\n\t\t________________________________________");
 
@@ -184,13 +183,11 @@ int main()
 	{goto test;}
 	else
 	{
-	system("cls");
 	printf("\n\nSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
 	getch();
 	goto mainhome;
 	}
      test:
-     system("cls");
      printf("\n\n\t*** CONGRATULATION %s you are eligible to play the Game ***",playername);
      printf("\n\n\n\n\t!Press any key to Start the Game!");
      if(toupper(getch())=='p')
@@ -387,7 +384,6 @@ game:
 
 
 	score:
-    system("cls");
 	score=(float)countr*1000;
 	if(score>0.00 && score<10000.00)
 	{

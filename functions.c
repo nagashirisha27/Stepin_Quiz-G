@@ -3,7 +3,6 @@
 
 void show_record()
     {
-    system("cls");
 	char name[20];
 	float scr;
 	FILE *f;
@@ -16,7 +15,7 @@ void show_record()
 	getch();}
 
 void reset_score()
-    {system("cls");
+    {
     float sc;
 	char nm[20];
 	FILE *f;
@@ -27,7 +26,7 @@ void reset_score()
     fclose(f);}
 
 void help()
-	{system("cls");
+	{
     printf("\n\n                              HELP");
     printf("\n -------------------------------------------------------------------------");
     printf("\n ......................... C program Quiz Game...........");
@@ -47,7 +46,7 @@ void help()
 	printf("\n\n\t*****C PROGRAM QUIZ GAME is developed by CODE WITH C TEAM********");}
 
 void edit_score(float score, char plnm[20])
-	{system("cls");
+	{
 	float sc;
 	char nm[20];
 	FILE *f;
